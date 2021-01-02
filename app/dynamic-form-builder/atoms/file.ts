@@ -5,7 +5,7 @@ import { FormGroup } from '@angular/forms';
 @Component({
     selector: 'file',
     template: `
-      <div [formGroup]="form">
+      <div [formGroup]="form" *ngIf="field.visible">
         <div *ngIf="!field.value" class="drop-container dropzone" dropZone (hovered)="toggleHover($event)"
           (dropped)="field.onUpload($event)" [class.hovering]="isHovering">
           <p class="m-0">

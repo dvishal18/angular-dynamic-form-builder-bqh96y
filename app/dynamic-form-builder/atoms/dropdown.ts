@@ -4,7 +4,7 @@ import { FormGroup } from '@angular/forms';
 @Component({
     selector: 'dropdown',
     template: `
-      <div [formGroup]="form">
+      <div [formGroup]="form" *ngIf="field.visible">
         <select class="form-control" [id]="field.name" [formControlName]="field.name">
           <option *ngFor="let opt of field.options" [value]="opt.key">{{opt.label}}</option>
         </select>

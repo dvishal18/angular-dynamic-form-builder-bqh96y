@@ -28,6 +28,7 @@ export class AppComponent {
     this.len = this.fields.length;
 
     this.createForm();
+    //this.addData();
     this.dataService.getNewRadioInfo().subscribe(info => {
       if (info.radioValue) {
         this.selectedRadio = info.radioValue;
@@ -35,67 +36,36 @@ export class AppComponent {
       }
     });
   }
-createForm() {
-  this.fields.push(
-    {
-      type: "text",
-      name: "firstName",
-      label: "First Name",
-      value: "",
-      required: true
-    },
-    {
-      type: "text",
-      name: "lastName",
-      label: "Last Name",
-      value: "",
-      required: true
-    },
-    {
-      type: "text",
-      name: "email",
-      label: "Email",
-      value: "",
-      required: true
-    },
 
-    {
-      type: "file",
-      name: "picture",
-      label: "Picture",
-      required: true,
-      onUpload: this.onUpload.bind(this)
-    },
-    {
-      type: "dropdown",
-      name: "country",
-      label: "Country",
-      value: "in",
-      required: true,
-      options: [{ key: "in", label: "India" }, { key: "us", label: "USA" }]
-    },
-    {
+  addData() {
+    this.fields.push({
       type: "radio",
       name: "radio",
       label: "radio",
       value: "m",
       required: true,
+      visible: true,
       options: [{ key: "m", label: "Male" }, { key: "f", label: "Female" }]
-    },
-    {
-      type: "checkbox",
-      name: "hobby",
-      label: "Hobby",
+    });
+  }
+  createForm() {
+    this.fields.push({
+      type: "radio",
+      name: "radio",
+      label: "radio",
+      value: "m",
       required: true,
-      options: [{ key: "f", label: "Fishing" }, { key: "c", label: "Cooking" }]
-    })
-}
+      visible: true,
+      options: [{ key: "m", label: "Male" }, { key: "f", label: "Female" }]
+    });
+  }
 
   onUpload(e) {
     console.log(e);
   }
 
   getFields() {
+    console.log("this.", this.fields);
     return this.fields;
   }
 
@@ -108,10 +78,11 @@ createForm() {
       } else {
         this.fields.push({
           type: "text",
-          name: "firstName",
-          label: "First Name",
+          name: "gggo",
+          label: "ggggggggg",
           value: "",
-          required: true
+          required: true,
+          visible: true
         });
       }
     }

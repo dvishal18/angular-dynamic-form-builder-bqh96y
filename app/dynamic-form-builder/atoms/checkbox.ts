@@ -4,7 +4,7 @@ import { FormGroup } from '@angular/forms';
 @Component({
     selector: 'checkbox',
     template: `
-      <div [formGroup]="form">
+      <div [formGroup]="form" *ngIf="field.visible">
         <div [formGroupName]="field.name" >
           <div *ngFor="let opt of field.options" class="form-check form-check">
           <label class="form-check-label">

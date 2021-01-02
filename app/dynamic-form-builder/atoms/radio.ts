@@ -5,7 +5,7 @@ import { DataService } from "../../../data.service";
 @Component({
   selector: "radio",
   template: `
-    <div [formGroup]="form">
+    <div [formGroup]="form" *ngIf="field.visible">
       <div class="form-check" *ngFor="let opt of field.options">
         <input
           class="form-check-input"
